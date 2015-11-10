@@ -8,7 +8,11 @@ public class Tile {
 	private int id;
 	private Texture img;
 	
-	public static Tile OCEAN = new Tile("Ocean", 0, null /* TODO add ocean texture */);
+	//TODO add textures
+	public static Tile OCEAN = new Tile("Ocean", 0, null);
+	public static Tile SEA = new Tile("Sea", 1, null);
+	public static Tile SHORE = new Tile("Island Shore", 2, null);
+	public static Tile ISLAND = new Tile("Land", 3, null);
 	
 	public Tile(String name, int id, Texture img) {
 		
