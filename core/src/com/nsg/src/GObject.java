@@ -1,5 +1,7 @@
 package com.nsg.src;
 
+import java.util.LinkedList;
+
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
@@ -9,9 +11,11 @@ import com.badlogic.gdx.physics.box2d.World;
 
 public class GObject {
 	
-	private Body[] bodies; 
+	private LinkedList<Body> bodies; 
 	
 	public GObject(int id, World world, float x, float y, float z, float width, float height) {
+		
+		bodies = new LinkedList<Body>();
 		BodyDef bodyDef = new BodyDef();
 		bodyDef.type = BodyType.DynamicBody;
 		bodyDef.position.set(x, y);
@@ -24,6 +28,11 @@ public class GObject {
 		fixDef.density = (float) Math.pow(width, height);
 		fixDef.restitution = .1f;
 		fixDef.friction = .5f;
+		
+		//update this
+		Body TEST = world.createBody(bodyDef);
+		TEST.createFixture(fixDef);
+		
 	}
 
 }

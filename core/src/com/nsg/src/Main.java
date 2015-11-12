@@ -7,6 +7,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Main extends ApplicationAdapter {
+	
+	public GameRender gr;
+	
+	/*
 	SpriteBatch batch;
 	Texture img;
 	
@@ -23,5 +27,14 @@ public class Main extends ApplicationAdapter {
 		batch.begin();
 		batch.draw(img, 0, 0);
 		batch.end();
+	}
+	*/
+	
+	public static void main(String[] args) {
+		new Main().start();
+	}
+	
+	public void start() {
+		gr = new GameRender();
 	}
 }
